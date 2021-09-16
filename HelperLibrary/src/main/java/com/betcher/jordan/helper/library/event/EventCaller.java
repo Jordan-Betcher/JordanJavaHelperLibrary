@@ -6,6 +6,7 @@ import java.util.List;
 public class EventCaller<T> implements Event<T>
 {
 	On<T> on;
+	boolean go = true;
 	
 	public void add(On<T> on)
 	{
@@ -15,7 +16,7 @@ public class EventCaller<T> implements Event<T>
 	@Override
 	public void remove(On<T> on)
 	{
-	
+		go = false;
 	}
 	
 	@Override
@@ -26,6 +27,6 @@ public class EventCaller<T> implements Event<T>
 	
 	public void call(T t)
 	{
-		on.call(this);
+		if(go) on.call(this);
 	}
 }
