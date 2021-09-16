@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HelperLibrary/HelperLibrary.iml" filepath="$PROJECT_DIR$/HelperLibrary/HelperLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/JordanJavaHelperLibrary.iml" filepath="$PROJECT_DIR$/.idea/JordanJavaHelperLibrary.iml" />
     </modules>
   </component>
 </project>
