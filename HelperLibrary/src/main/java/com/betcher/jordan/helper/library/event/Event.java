@@ -1,8 +1,23 @@
 package main.java.com.betcher.jordan.helper.library.event;
 
-public interface Event<T>
+public class Event<T>
 {
-	void add(On<T> on);
-	void remove(On<T> on);
-	T object();
+	private final EventCaller<T> eventCaller;
+	private final T object;
+	
+	public Event(EventCaller<T> eventCaller, T object)
+	{
+		this.eventCaller = eventCaller;
+		this.object = object;
+	}
+	
+	public void remove(On<T> on)
+	{
+		//TODO
+	}
+	
+	public T object()
+	{
+		return null; //TODO
+	}
 }
