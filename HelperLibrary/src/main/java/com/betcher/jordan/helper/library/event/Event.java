@@ -13,7 +13,7 @@ public class Event<T>
 	
 	public void remove(On<T> on)
 	{
-		//TODO
+		eventCaller.remove(on);
 	}
 	
 	public T object()
