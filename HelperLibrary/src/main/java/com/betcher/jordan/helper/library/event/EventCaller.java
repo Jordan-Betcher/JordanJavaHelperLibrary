@@ -10,6 +10,7 @@ public class EventCaller<T> implements Event<T>
 	
 	public void add(On<T> on)
 	{
+		if(this.on == null)
 		this.on = on;
 	}
 	
