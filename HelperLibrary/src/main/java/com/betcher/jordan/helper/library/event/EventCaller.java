@@ -5,8 +5,6 @@ import java.util.List;
 
 public class EventCaller<T> implements Event<T>
 {
-	ArrayList<On<T>> ons = new ArrayList<>();
-	
 	public void add(On<T> on)
 	{
 	
