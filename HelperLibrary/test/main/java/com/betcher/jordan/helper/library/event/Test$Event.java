@@ -8,6 +8,18 @@ import static org.mockito.Mockito.*;
 class Test$Event
 {
 	@Test
+	public void object_0_0()
+	{
+		int object = 0;
+		EventCaller<Integer> eventCaller = mock(EventCaller.class);
+		
+		Event<Integer> event = new Event<>(eventCaller, object);
+		
+		int actualObject = event.object();
+		assertEquals(object, actualObject);
+	}
+	
+	@Test
 	public void remove_on_removeOn()
 	{
 		int object = 0;

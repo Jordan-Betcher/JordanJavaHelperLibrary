@@ -18,6 +18,6 @@ public class Event<T>
 	
 	public T object()
 	{
-		return null; //TODO
+		return object;
 	}
 }
