@@ -5,9 +5,11 @@ import java.util.List;
 
 public class EventCaller<T> implements Event<T>
 {
+	On<T> on;
+	
 	public void add(On<T> on)
 	{
-		on.call(this);
+		this.on = on;
 	}
 	
 	@Override
@@ -24,6 +26,6 @@ public class EventCaller<T> implements Event<T>
 	
 	public void call(T t)
 	{
-	
+		on.call(this);
 	}
 }
