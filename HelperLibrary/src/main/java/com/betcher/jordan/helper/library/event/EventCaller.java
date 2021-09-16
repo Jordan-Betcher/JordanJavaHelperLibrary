@@ -7,7 +7,7 @@ public class EventCaller<T> implements Event<T>
 {
 	public void add(On<T> on)
 	{
-	
+		on.call(this);
 	}
 	
 	@Override
