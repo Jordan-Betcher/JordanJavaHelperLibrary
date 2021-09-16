@@ -1,10 +1,8 @@
 package main.java.com.betcher.jordan.helper.library.event;
 
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-
-import static org.junit.Assert.assertNotNull;
+import org.junit.jupiter.api.*;
 import static org.mockito.Mockito.*;
 
 class Test$EventCaller
@@ -15,6 +13,6 @@ class Test$EventCaller
 		EventCaller<Integer> eventCaller = new EventCaller<>();
 		
 		ArrayList<On<Integer>> ons = eventCaller.ons;
-		assertNotNull(ons);
+		Assertions.assertNotNull(ons);
 	}
 }
