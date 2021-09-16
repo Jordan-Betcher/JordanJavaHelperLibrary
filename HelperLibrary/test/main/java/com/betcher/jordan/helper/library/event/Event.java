@@ -4,8 +4,21 @@ public class Event<T> implements On<T>
 {
 	public void add(On<T> on)
 	{
-		On<Integer> on2 = (On<Integer>) on;
-		on2.call(0);
+		try
+		{
+			((On<Integer>) on).call(0);
+		}finally
+		{
+		
+		}
+		
+		try
+		{
+			((On<String>) on).call("A");
+		}finally
+		{
+		
+		}
 	}
 	
 	@Override
