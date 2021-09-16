@@ -7,6 +7,21 @@ import static org.mockito.Mockito.*;
 class Test$EventCaller
 {
 	@Test
+	public void callAddAdd_0onAonB_onBCall()
+	{
+		int object = 0;
+		On<Integer> onA = mock(On.class);
+		On<Integer> onB = mock(On.class);
+		
+		EventCaller<Integer> eventCaller = new EventCaller<>();
+		eventCaller.add(onA);
+		eventCaller.add(onB);
+		eventCaller.call(object);
+		
+		verify(onB, times(1)).call(eventCaller);
+	}
+	
+	@Test
 	public void callAddAdd_0onAonB_onACall()
 	{
 		int object = 0;

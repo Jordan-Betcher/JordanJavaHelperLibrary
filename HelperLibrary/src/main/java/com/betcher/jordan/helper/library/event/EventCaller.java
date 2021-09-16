@@ -5,13 +5,12 @@ import java.util.List;
 
 public class EventCaller<T> implements Event<T>
 {
-	On<T> on;
+	ArrayList<On<T>> ons = new ArrayList<>();
 	boolean go = true;
 	
 	public void add(On<T> on)
 	{
-		if(this.on == null)
-		this.on = on;
+		ons.add(on);
 	}
 	
 	@Override
@@ -28,6 +27,12 @@ public class EventCaller<T> implements Event<T>
 	
 	public void call(T t)
 	{
-		if(go) on.call(this);
+		if(go)
+		{
+			for(On<T> on : ons)
+			{
+				on.call(this);
+			}
+		}
 	}
 }
