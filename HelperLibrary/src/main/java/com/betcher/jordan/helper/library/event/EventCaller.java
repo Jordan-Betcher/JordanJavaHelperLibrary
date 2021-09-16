@@ -16,7 +16,7 @@ public class EventCaller<T> implements Event<T>
 	@Override
 	public void remove(On<T> on)
 	{
-		go = false;
+		ons.remove(on);
 	}
 	
 	@Override

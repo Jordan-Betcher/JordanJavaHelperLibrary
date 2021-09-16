@@ -7,7 +7,23 @@ import static org.mockito.Mockito.*;
 class Test$EventCaller
 {
 	@Test
-	public void callAddAdd_0onAonB_onBCall()
+	public void callAddRemoveAdd_onB_call()
+	{
+		int object = 0;
+		On<Integer> onA = mock(On.class);
+		On<Integer> onB = mock(On.class);
+		
+		EventCaller<Integer> eventCaller = new EventCaller<>();
+		eventCaller.add(onA);
+		eventCaller.remove(onA);
+		eventCaller.add(onB);
+		eventCaller.call(object);
+		
+		verify(onB, times(1)).call(eventCaller);
+	}
+	
+	@Test
+	public void callAddAdd_onB_call()
 	{
 		int object = 0;
 		On<Integer> onA = mock(On.class);
@@ -22,7 +38,7 @@ class Test$EventCaller
 	}
 	
 	@Test
-	public void callAddAdd_0onAonB_onACall()
+	public void callAddAdd_onA_Call()
 	{
 		int object = 0;
 		On<Integer> onA = mock(On.class);
@@ -37,7 +53,7 @@ class Test$EventCaller
 	}
 	
 	@Test
-	public void callRemoveAdd_0onOn_0onCall()
+	public void callRemoveAdd_on_0Call()
 	{
 		int object = 0;
 		On<Integer> on = mock(On.class);
@@ -51,7 +67,7 @@ class Test$EventCaller
 	}
 	
 	@Test
-	public void add_0on_0onCall()
+	public void add_on_0Call()
 	{
 		int object = 0;
 		On<Integer> on = mock(On.class);
