@@ -2,28 +2,16 @@ package main.java.com.betcher.jordan.helper.library.event;
 
 public class Event<T> implements On<T>
 {
+	private On<T> on;
+	
 	public void add(On<T> on)
 	{
-		try
-		{
-			((On<Integer>) on).call(0);
-		}finally
-		{
-		
-		}
-		
-		try
-		{
-			((On<String>) on).call("A");
-		}finally
-		{
-		
-		}
+		this.on = on;
 	}
 	
 	@Override
 	public void call(T t)
 	{
-	
+		on.call(t);
 	}
 }

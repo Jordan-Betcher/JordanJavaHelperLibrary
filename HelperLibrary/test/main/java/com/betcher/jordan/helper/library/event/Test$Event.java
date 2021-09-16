@@ -7,6 +7,19 @@ import static org.mockito.Mockito.*;
 class Test$Event
 {
 	@Test
+	public void call_1on_onCall1()
+	{
+		int number = 1;
+		On<Integer> on = mock(On.class);
+		
+		Event<Integer> event = new Event<>();
+		event.add(on);
+		event.call(number);
+		
+		verify(on, times(1)).call(number);
+	}
+	
+	@Test
 	public void call_Aon_onCallA()
 	{
 		String string = "A";
