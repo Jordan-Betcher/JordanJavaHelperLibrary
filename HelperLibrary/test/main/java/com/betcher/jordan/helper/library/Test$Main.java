@@ -14,5 +14,6 @@ class Test$Main
 	@Test
 	public void runs()
 	{
+		//Does it detect error messages in the entire project (Test$Event) or just in the modified files
 	}
 }
