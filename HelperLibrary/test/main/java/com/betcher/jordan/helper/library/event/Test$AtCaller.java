@@ -17,6 +17,15 @@ class Test$AtCaller
 	}
 	
 	@Test
+	public void __onCallerNotNull()
+	{
+		AtCaller atCaller = new AtCaller();
+		
+		OnCaller<Void> actualOnCaller = atCaller.onCaller;
+		assertNotNull(actualOnCaller);
+	}
+	
+	@Test
 	public void Add_at0_addAtAsOn0()
 	{
 		At at = mock(At.class);
