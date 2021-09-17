@@ -12,17 +12,14 @@ class Test$EventCaller
 		int object = 0;
 		On<Integer> onA = mock(On.class);
 		On<Integer> onB = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(onA);
-		eventCaller.remove(onA);
-		eventCaller.add(onB);
-		when(eventFactory.createEvent(eventCaller, object)).thenReturn(event);
-		eventCaller.call(object);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(onA);
+		onCaller.remove(onA);
+		onCaller.add(onB);
+		onCaller.call(object);
 		
-		verify(onB, times(1)).call(event);
+		verify(onB, times(1)).call(object);
 	}
 	
 	@Test
@@ -31,16 +28,13 @@ class Test$EventCaller
 		int object = 0;
 		On<Integer> onA = mock(On.class);
 		On<Integer> onB = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(onA);
-		eventCaller.add(onB);
-		when(eventFactory.createEvent(eventCaller, object)).thenReturn(event);
-		eventCaller.call(object);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(onA);
+		onCaller.add(onB);
+		onCaller.call(object);
 		
-		verify(onB, times(1)).call(event);
+		verify(onB, times(1)).call(object);
 	}
 	
 	@Test
@@ -49,16 +43,13 @@ class Test$EventCaller
 		int object = 0;
 		On<Integer> onA = mock(On.class);
 		On<Integer> onB = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(onA);
-		eventCaller.add(onB);
-		when(eventFactory.createEvent(eventCaller, object)).thenReturn(event);
-		eventCaller.call(object);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(onA);
+		onCaller.add(onB);
+		onCaller.call(object);
 		
-		verify(onA, times(1)).call(event);
+		verify(onA, times(1)).call(object);
 	}
 	
 	@Test
@@ -66,14 +57,11 @@ class Test$EventCaller
 	{
 		int object = 0;
 		On<Integer> on = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(on);
-		eventCaller.remove(on);
-		when(eventFactory.createEvent(eventCaller, object)).thenReturn(event);
-		eventCaller.call(object);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(on);
+		onCaller.remove(on);
+		onCaller.call(object);
 		
 		verify(on, times(0)).call(any());
 	}
@@ -83,11 +71,9 @@ class Test$EventCaller
 	{
 		int object = 0;
 		On<Integer> on = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(on);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(on);
 		
 		verify(on, times(0)).call(any());
 	}
@@ -97,14 +83,11 @@ class Test$EventCaller
 	{
 		int object = 0;
 		On<Integer> on = mock(On.class);
-		Event event = mock(Event.class);
-		EventFactory eventFactory = mock(EventFactory.class);
 		
-		EventCaller<Integer> eventCaller = new EventCaller<>(eventFactory);
-		eventCaller.add(on);
-		when(eventFactory.createEvent(eventCaller, object)).thenReturn(event);
-		eventCaller.call(object);
+		OnCaller<Integer> onCaller = new OnCaller<>();
+		onCaller.add(on);
+		onCaller.call(object);
 		
-		verify(on, times(1)).call(event);
+		verify(on, times(1)).call(object);
 	}
 }

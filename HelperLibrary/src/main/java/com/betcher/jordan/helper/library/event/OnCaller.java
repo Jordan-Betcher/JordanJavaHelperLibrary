@@ -2,15 +2,9 @@ package main.java.com.betcher.jordan.helper.library.event;
 
 import java.util.ArrayList;
 
-public class EventCaller<T>
+public class OnCaller<T>
 {
 	ArrayList<On<T>> ons = new ArrayList<>();
-	private EventFactory<T> eventFactory;
-	
-	public EventCaller(EventFactory<T> eventFactory)
-	{
-		this.eventFactory = eventFactory;
-	}
 	
 	public void add(On<T> on)
 	{
@@ -26,7 +20,7 @@ public class EventCaller<T>
 	{
 		for(On<T> on : ons)
 		{
-			on.call(eventFactory.createEvent(this, t));
+			on.call(t);
 		}
 	}
 }
