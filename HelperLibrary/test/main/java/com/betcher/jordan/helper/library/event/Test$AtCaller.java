@@ -8,6 +8,23 @@ import static org.mockito.Mockito.*;
 @SuppressWarnings("unchecked")
 class Test$AtCaller
 {
+	
+	@Test
+	public void Add_at0_addAtAsOn0()
+	{
+		At at = mock(At.class);
+		int numberOfCalls = 0;
+		OnCaller<Void> onCaller = mock(OnCaller.class);
+		AtToOn atToOn = mock(AtToOn.class);
+		On<Void> on = mock(On.class);
+		when(atToOn.toOn(at)).thenReturn(on);
+		
+		AtCaller atCaller = new AtCaller(onCaller, atToOn);
+		atCaller.add(at, numberOfCalls);
+		
+		verify(onCaller, times(1)).add(on, numberOfCalls);
+	}
+	
 	@Test
 	public void Add_null1_0add()
 	{
