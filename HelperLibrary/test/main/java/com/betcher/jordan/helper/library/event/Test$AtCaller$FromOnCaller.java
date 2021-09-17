@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 
-class Test$AtCaller2
+class Test$AtCaller$FromOnCaller
 {
 	//Breaks when OnAt equals not implemented
 	//Breaks when OnAt hashcode not implemented
