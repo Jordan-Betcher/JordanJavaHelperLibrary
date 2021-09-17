@@ -18,7 +18,7 @@ public class OnCaller<T>
 	public void add(On<T> on, int numberOfCalls)
 	{
 		ons2.add(on);
-		this.numberOfCalls = numberOfCalls;
+		if(this.numberOfCalls == 0) this.numberOfCalls = numberOfCalls;
 	}
 	
 	public void remove(On<T> on)
@@ -34,7 +34,7 @@ public class OnCaller<T>
 		{
 			for(On<T> on : ons2)
 			{
-				on.call(t);
+				on.call(this.t);
 			}
 			numberOfCalls--;
 		}
