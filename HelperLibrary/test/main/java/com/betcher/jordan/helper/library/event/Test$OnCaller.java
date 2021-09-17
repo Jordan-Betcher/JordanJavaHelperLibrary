@@ -8,6 +8,21 @@ import static org.mockito.Mockito.*;
 class Test$OnCaller
 {
 	@Test
+	public void callCallAdd_ABon_1onCallB()
+	{
+		String object1 = "A";
+		String object2 = "B";
+		On<String> on = mock(On.class);
+		
+		OnCaller<String> onCaller = new OnCaller<>();
+		onCaller.add(on);
+		onCaller.call(object1);
+		onCaller.call(object2);
+		
+		verify(on, times(1)).call(object2);
+	}
+	
+	@Test
 	public void callCallAddAdd_ABonA2onB1_1onACallB()
 	{
 		String object1 = "A";

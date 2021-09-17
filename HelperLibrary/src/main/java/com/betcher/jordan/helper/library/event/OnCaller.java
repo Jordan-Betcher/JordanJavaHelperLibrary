@@ -27,8 +27,6 @@ public class OnCaller<T>
 	
 	public void call(T t)
 	{
-		if(this.t == null) this.t = t;
-		
 		Iterator<Map.Entry<On<T>, Integer>> iterator = onNumberOfCalls.entrySet().iterator();
 		while(iterator.hasNext())
 		{
@@ -46,7 +44,7 @@ public class OnCaller<T>
 		
 		for(On<T> on : ons)
 		{
-			on.call(this.t);
+			on.call(t);
 		}
 	}
 }
