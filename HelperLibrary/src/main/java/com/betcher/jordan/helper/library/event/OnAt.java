@@ -14,4 +14,24 @@ class OnAt implements On<Void>
 	{
 		at.call();
 	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if(obj instanceof OnAt)
+		{
+			OnAt onAt = (OnAt) obj;
+			return this.at.equals(onAt.at);
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return this.at.hashCode();
+	}
 }
