@@ -7,7 +7,7 @@ public class AtCaller
 	
 	public void add(At at)
 	{
-		onCaller.add(atToOn.toOn(at));
+		if(at != null) onCaller.add(atToOn.toOn(at));
 	}
 	
 	public void add(At at, int numberOfCalls)
