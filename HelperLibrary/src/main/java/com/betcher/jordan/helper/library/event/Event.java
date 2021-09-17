@@ -15,11 +15,11 @@ public class Event
 	
 	public void remove(Listener listener)
 	{
-	
+		this.listener = null;
 	}
 	
 	public void call()
 	{
-		listener.call();
+		if(listener != null) listener.call();
 	}
 }
