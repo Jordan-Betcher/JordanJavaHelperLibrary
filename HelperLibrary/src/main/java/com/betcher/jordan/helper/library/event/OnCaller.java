@@ -7,9 +7,6 @@ public class OnCaller<T>
 	ArrayList<On<T>> ons = new ArrayList<>();
 	HashMap<On<T>, Integer> onNumberOfCalls = new HashMap<>();
 	
-	private int numberOfCalls;
-	private T t;
-	
 	public void add(On<T> on)
 	{
 		ons.add(on);
