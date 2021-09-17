@@ -6,6 +6,7 @@ public class OnCaller<T>
 {
 	ArrayList<On<T>> ons = new ArrayList<>();
 	private On<T> on;
+	private int numberOfCalls;
 	private T t;
 	
 	public void add(On<T> on)
@@ -13,7 +14,9 @@ public class OnCaller<T>
 		ons.add(on);
 	}
 	
-	public void add(On<T> on, int numberOfCalls) {this.on = on;}
+	public void add(On<T> on, int numberOfCalls) {this.on = on;
+		this.numberOfCalls = numberOfCalls;
+	}
 	
 	public void remove(On<T> on)
 	{
@@ -26,7 +29,8 @@ public class OnCaller<T>
 		if(on != null)
 		{
 			on.call(t);
-			on = null;
+			if(numberOfCalls == 1) on = null;
+			numberOfCalls--;
 		}
 		for(On<T> on : ons)
 		{
