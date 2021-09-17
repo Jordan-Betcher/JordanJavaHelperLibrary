@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class OnCaller<T>
 {
 	ArrayList<On<T>> ons = new ArrayList<>();
-	private On<T> on;
+	ArrayList<On<T>> ons2 = new ArrayList<>();
+	
 	private int numberOfCalls;
 	private T t;
 	
@@ -14,7 +15,9 @@ public class OnCaller<T>
 		ons.add(on);
 	}
 	
-	public void add(On<T> on, int numberOfCalls) {this.on = on;
+	public void add(On<T> on, int numberOfCalls)
+	{
+		ons2.add(on);
 		this.numberOfCalls = numberOfCalls;
 	}
 	
@@ -26,12 +29,16 @@ public class OnCaller<T>
 	public void call(T t)
 	{
 		if(this.t == null) this.t = t;
-		if(on != null)
+		
+		if(numberOfCalls != 0)
 		{
-			on.call(t);
-			if(numberOfCalls == 1) on = null;
+			for(On<T> on : ons2)
+			{
+				on.call(t);
+			}
 			numberOfCalls--;
 		}
+		
 		for(On<T> on : ons)
 		{
 			on.call(this.t);
