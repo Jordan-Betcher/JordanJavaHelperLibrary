@@ -17,6 +17,15 @@ class Test$AtCaller
 	}
 	
 	@Test
+	public void __atToOnNotNull()
+	{
+		AtCaller atCaller = new AtCaller();
+		
+		AtToOn actualAtToOn = atCaller.atToOn;
+		assertNotNull(actualAtToOn);
+	}
+	
+	@Test
 	public void __onCallerNotNull()
 	{
 		AtCaller atCaller = new AtCaller();

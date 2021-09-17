@@ -3,7 +3,7 @@ package main.java.com.betcher.jordan.helper.library.event;
 public class AtCaller
 {
 	OnCaller<Void> onCaller = new OnCaller<>();
-	AtToOn atToOn;
+	AtToOn atToOn = new AtToOn();
 	
 	public void add(At at)
 	{
