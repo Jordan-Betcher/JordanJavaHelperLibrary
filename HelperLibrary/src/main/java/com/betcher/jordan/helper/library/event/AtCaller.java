@@ -29,6 +29,6 @@ public class AtCaller
 	
 	public void remove(At at)
 	{
-		onCaller.remove(atToOn.toOn(at));
+		if(at != null) onCaller.remove(atToOn.toOn(at));
 	}
 }

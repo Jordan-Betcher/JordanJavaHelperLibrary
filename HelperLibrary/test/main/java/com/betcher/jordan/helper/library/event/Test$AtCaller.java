@@ -9,6 +9,18 @@ import static org.mockito.Mockito.*;
 class Test$AtCaller
 {
 	@Test
+	public void remove_null_0Remove()
+	{
+		OnCaller<Void> onCaller = mock(OnCaller.class);
+		AtToOn atToOn = mock(AtToOn.class);
+		
+		AtCaller atCaller = new AtCaller(onCaller, atToOn);
+		atCaller.remove(null);
+		
+		verify(onCaller, times(0)).remove(null);
+	}
+	
+	@Test
 	public void remove_at_removeAtAsOn()
 	{
 		At at = mock(At.class);
