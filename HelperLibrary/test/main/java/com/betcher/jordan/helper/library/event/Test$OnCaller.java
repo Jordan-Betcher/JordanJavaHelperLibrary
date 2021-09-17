@@ -7,6 +7,23 @@ import static org.mockito.Mockito.*;
 @SuppressWarnings("unchecked")
 class Test$OnCaller
 {
+	
+	@Test
+	public void callRemoveAdd_Aon1On_0Call()
+	{
+		
+		String object1 = "A";
+		int numberOfCalls = 1;
+		On<String> on = mock(On.class);
+		
+		OnCaller<String> onCaller = new OnCaller<>();
+		onCaller.add(on, numberOfCalls);
+		onCaller.remove(on);
+		onCaller.call(object1);
+		
+		verify(on, times(0)).call(any());
+	}
+	
 	@Test
 	public void callCallAdd_ABon_1onCallB()
 	{

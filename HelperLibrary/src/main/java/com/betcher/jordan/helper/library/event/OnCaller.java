@@ -15,12 +15,13 @@ public class OnCaller<T>
 	public void add(On<T> on, int numberOfCalls)
 	{
 		onNumberOfCalls.put(on, numberOfCalls);
-	} //TODO test negative numbers
+	}
 	
 	public void remove(On<T> on)
 	{
 		ons.remove(on);
-	} //TODO test remove from onNumberOfCalls
+		onNumberOfCalls.remove(on);
+	}
 	
 	public void call(T t)
 	{
@@ -33,7 +34,8 @@ public class OnCaller<T>
 				entry.getKey().call(t);
 				entry.setValue(entry.getValue() - 1);
 			}
-			else
+			
+			if(entry.getValue() <= 0)
 			{
 				iterator.remove();
 			}
