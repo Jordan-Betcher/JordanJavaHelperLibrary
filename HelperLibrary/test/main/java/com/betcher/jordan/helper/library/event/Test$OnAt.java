@@ -8,6 +8,16 @@ import static org.mockito.Mockito.*;
 class Test$OnAt
 {
 	@Test
+	public void __0call()
+	{
+		At at = mock(At.class);
+		
+		OnAt onAt = new OnAt(at);
+		
+		verify(at, times(0)).call();
+	}
+	
+	@Test
 	public void call__call()
 	{
 		At at = mock(At.class);
