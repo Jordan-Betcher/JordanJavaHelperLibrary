@@ -4,8 +4,22 @@ import org.junit.jupiter.api.*;
 
 import static org.mockito.Mockito.*;
 
-class Test$EventCaller
+class Test$OnCaller
 {
+	@Test
+	public void callAdd_Aon1_call()
+	{
+		String object = "A";
+		int numberOfCalls = 1;
+		On<String> on = mock(On.class);
+		
+		OnCaller<String> onCaller = new OnCaller<>();
+		onCaller.add(on, numberOfCalls);
+		onCaller.call(object);
+		
+		verify(on, times(1)).call(object);
+	}
+	
 	@Test
 	public void callAddRemoveAdd_onB_call()
 	{
