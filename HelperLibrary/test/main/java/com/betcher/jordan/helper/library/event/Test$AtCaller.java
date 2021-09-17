@@ -9,6 +9,19 @@ import static org.mockito.Mockito.*;
 class Test$AtCaller
 {
 	@Test
+	public void Add_null1_0add()
+	{
+		int numberOfCalls = 1;
+		OnCaller<Void> onCaller = mock(OnCaller.class);
+		AtToOn atToOn = mock(AtToOn.class);
+		
+		AtCaller atCaller = new AtCaller(onCaller, atToOn);
+		atCaller.add(null, numberOfCalls);
+		
+		verify(onCaller, times(0)).add(any(), anyInt());
+	}
+	
+	@Test
 	public void remove_null_0Remove()
 	{
 		OnCaller<Void> onCaller = mock(OnCaller.class);
