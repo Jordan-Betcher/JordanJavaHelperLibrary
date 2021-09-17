@@ -1,10 +1,9 @@
 package main.java.com.betcher.jordan.helper.library.event;
 
-public class AtToOn
+class AtToOn
 {
 	public On<Void> toOn(At at)
 	{
-		//TODO
-		return null;
+		return new OnAt(at);
 	}
 }
