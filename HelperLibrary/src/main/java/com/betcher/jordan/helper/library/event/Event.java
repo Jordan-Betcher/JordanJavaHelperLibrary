@@ -5,23 +5,20 @@ import java.util.List;
 
 public class Event
 {
-	private ArrayList<Listener> listeners = new ArrayList<>();
+	private AtCaller atCaller = new AtCaller();
 	
 	public void add(Listener listener)
 	{
-		listeners.add(listener);
+		atCaller.add(listener);
 	}
 	
 	public void remove(Listener listener)
 	{
-		listeners.remove(listener);
+		atCaller.remove(listener);
 	}
 	
 	public void call()
 	{
-		for(Listener listener : listeners)
-		{
-			listener.call();
-		}
+		atCaller.call();
 	}
 }
