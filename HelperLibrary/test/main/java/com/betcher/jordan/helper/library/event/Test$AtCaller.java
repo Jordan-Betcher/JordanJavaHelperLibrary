@@ -10,6 +10,21 @@ class Test$AtCaller
 {
 	
 	@Test
+	public void call__callNull()
+	{
+		At at = mock(At.class);
+		OnCaller<Void> onCaller = mock(OnCaller.class);
+		AtToOn atToOn = mock(AtToOn.class);
+		On<Void> on = mock(On.class);
+		when(atToOn.toOn(at)).thenReturn(on);
+		
+		AtCaller atCaller = new AtCaller(onCaller, atToOn);
+		atCaller.call();
+		
+		verify(onCaller, times(1)).call(null);
+	}
+	
+	@Test
 	public void Add_at1_addAtAsOn1()
 	{
 		At at = mock(At.class);

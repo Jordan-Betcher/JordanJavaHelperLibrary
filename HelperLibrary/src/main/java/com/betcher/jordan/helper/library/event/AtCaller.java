@@ -24,7 +24,7 @@ public class AtCaller
 	
 	public void call()
 	{
-	
+		onCaller.call(null);
 	}
 	
 	public void remove(At at)
