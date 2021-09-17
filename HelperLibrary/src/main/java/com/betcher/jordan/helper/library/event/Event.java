@@ -6,9 +6,11 @@ public class Event
 {
 	
 	
+	private Listener listener;
+	
 	public void add(Listener listener)
 	{
-		listener.call();
+		this.listener = listener;
 	}
 	
 	public void remove(Listener listener)
@@ -18,6 +20,6 @@ public class Event
 	
 	public void call()
 	{
-	
+		listener.call();
 	}
 }
