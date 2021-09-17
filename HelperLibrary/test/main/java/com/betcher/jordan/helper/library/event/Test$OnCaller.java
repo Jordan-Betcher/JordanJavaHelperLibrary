@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.mockito.Mockito.*;
 
+@SuppressWarnings("unchecked")
 class Test$OnCaller
 {
 	@Test
@@ -138,7 +139,6 @@ class Test$OnCaller
 	@Test
 	public void add_on_0Call()
 	{
-		int object = 0;
 		On<Integer> on = mock(On.class);
 		
 		OnCaller<Integer> onCaller = new OnCaller<>();
