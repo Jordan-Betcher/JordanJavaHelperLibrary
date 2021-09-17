@@ -1,7 +1,6 @@
 package main.java.com.betcher.jordan.helper.library.event;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class OnCaller<T>
 {
@@ -30,15 +29,19 @@ public class OnCaller<T>
 	{
 		if(this.t == null) this.t = t;
 		
-		for(On<T> on : onNumberOfCalls.keySet())
+		Iterator<Map.Entry<On<T>, Integer>> iterator = onNumberOfCalls.entrySet().iterator();
+		while(iterator.hasNext())
 		{
-			int numberOfCalls = onNumberOfCalls.get(on);
-			if(numberOfCalls > 0)
+			Map.Entry<On<T>, Integer> entry = iterator.next();
+			if(entry.getValue() > 0)
 			{
-				on.call(t);
+				entry.getKey().call(t);
+				entry.setValue(entry.getValue() - 1);
 			}
-			numberOfCalls--;
-			onNumberOfCalls.replace(on, numberOfCalls);
+			else
+			{
+				iterator.remove();
+			}
 		}
 		
 		for(On<T> on : ons)
