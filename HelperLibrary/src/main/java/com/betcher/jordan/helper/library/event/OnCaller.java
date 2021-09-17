@@ -15,12 +15,12 @@ public class OnCaller<T>
 	public void add(On<T> on, int numberOfCalls)
 	{
 		onNumberOfCalls.put(on, numberOfCalls);
-	}
+	} //TODO test negative numbers
 	
 	public void remove(On<T> on)
 	{
 		ons.remove(on);
-	}
+	} //TODO test remove from onNumberOfCalls
 	
 	public void call(T t)
 	{
