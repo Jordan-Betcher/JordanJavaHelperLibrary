@@ -4,13 +4,11 @@ import java.util.List;
 
 public class Event
 {
-	
-	
 	private Listener listener;
 	
 	public void add(Listener listener)
 	{
-		this.listener = listener;
+		if(this.listener ==null) this.listener = listener;
 	}
 	
 	public void remove(Listener listener)

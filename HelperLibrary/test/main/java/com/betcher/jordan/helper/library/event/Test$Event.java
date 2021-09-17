@@ -8,6 +8,20 @@ import static org.mockito.Mockito.*;
 class Test$Event
 {
 	@Test
+	public void callAddAdd_listener1Listener2_listener1Call()
+	{
+		Listener listener1 = mock(Listener.class);
+		Listener listener2 = mock(Listener.class);
+		
+		Event event = new Event();
+		event.add(listener1);
+		event.add(listener2);
+		event.call();
+		
+		verify(listener1, times(1)).call();
+	}
+	
+	@Test
 	public void callRemoveAdd_listener_0call()
 	{
 		Listener listener = mock(Listener.class);
