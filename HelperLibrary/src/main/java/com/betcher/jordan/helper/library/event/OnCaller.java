@@ -6,6 +6,7 @@ public class OnCaller<T>
 {
 	ArrayList<On<T>> ons = new ArrayList<>();
 	private On<T> on;
+	private T t;
 	
 	public void add(On<T> on)
 	{
@@ -21,10 +22,15 @@ public class OnCaller<T>
 	
 	public void call(T t)
 	{
-		if(on != null) on.call(t);
-		for(On<T> on : ons)
+		if(this.t == null) this.t = t;
+		if(on != null)
 		{
 			on.call(t);
+			on = null;
+		}
+		for(On<T> on : ons)
+		{
+			on.call(this.t);
 		}
 	}
 }
