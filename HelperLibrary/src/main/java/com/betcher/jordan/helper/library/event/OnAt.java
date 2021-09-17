@@ -4,7 +4,7 @@ class OnAt implements On<Void>
 {
 	public OnAt(At at)
 	{
-	
+		at.call();
 	}
 	
 	@Override
