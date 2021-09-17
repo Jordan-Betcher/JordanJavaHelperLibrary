@@ -1,23 +1,27 @@
 package main.java.com.betcher.jordan.helper.library.event;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Event
 {
-	private Listener listener;
+	private ArrayList<Listener> listeners = new ArrayList<>();
 	
 	public void add(Listener listener)
 	{
-		if(this.listener ==null) this.listener = listener;
+		listeners.add(listener);
 	}
 	
 	public void remove(Listener listener)
 	{
-		this.listener = null;
+		listeners.remove(listener);
 	}
 	
 	public void call()
 	{
-		if(listener != null) listener.call();
+		for(Listener listener : listeners)
+		{
+			listener.call();
+		}
 	}
 }
