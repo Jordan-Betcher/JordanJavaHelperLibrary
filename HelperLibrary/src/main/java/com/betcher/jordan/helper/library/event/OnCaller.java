@@ -12,9 +12,9 @@ public class OnCaller<T>
 		ons.add(on);
 	}
 	
-	public void add(On<T> on, int numberOfCalls)
+	public void add(On<T> on, int callsBeforeRemoving)
 	{
-		onNumberOfCalls.put(on, numberOfCalls);
+		onNumberOfCalls.put(on, callsBeforeRemoving);
 	}
 	
 	public void remove(On<T> on)

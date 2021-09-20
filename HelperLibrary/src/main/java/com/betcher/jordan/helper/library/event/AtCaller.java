@@ -10,9 +10,9 @@ public class AtCaller
 		if(at != null) onCaller.add(atToOn.toOn(at));
 	}
 	
-	public void add(At at, int numberOfCalls)
+	public void add(At at, int callsBeforeRemoving)
 	{
-		if(at != null) onCaller.add(atToOn.toOn(at), numberOfCalls);
+		if(at != null) onCaller.add(atToOn.toOn(at), callsBeforeRemoving);
 	}
 	
 	public void call()
