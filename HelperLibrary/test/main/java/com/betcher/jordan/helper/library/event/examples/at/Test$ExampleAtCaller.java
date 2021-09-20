@@ -10,7 +10,18 @@ import static org.mockito.Mockito.*;
 class Test$ExampleAtCaller
 {
 	@Test
-	public void onClick_ButtonReleased_callAtButtonPressed()
+	public void __0callAtButtonReleased()
+	{
+		AtCaller atPressedCaller = mock(AtCaller.class);
+		AtCaller atReleasedCaller = mock(AtCaller.class);
+		
+		new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		
+		verify(atReleasedCaller, times(0)).call();
+	}
+	
+	@Test
+	public void onClick_ButtonReleased_callAtButtonReleased()
 	{
 		int buttonState = ExampleThirdParty.BUTTON_RELEASED;
 		AtCaller atPressedCaller = mock(AtCaller.class);
@@ -36,7 +47,7 @@ class Test$ExampleAtCaller
 	}
 	
 	@Test
-	public void _ButtonPressed_0callAtButtonPressed()
+	public void __0callAtButtonPressed()
 	{
 		AtCaller atPressedCaller = mock(AtCaller.class);
 		AtCaller atReleasedCaller = mock(AtCaller.class);

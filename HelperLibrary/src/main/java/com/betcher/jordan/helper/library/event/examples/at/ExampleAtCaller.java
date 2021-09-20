@@ -11,8 +11,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	public ExampleAtCaller(AtCaller buttonPressed, AtCaller buttonReleased)
 	{
 		this.buttonPressed = buttonPressed;
-		buttonReleased.call();
-		//this.AtButtonReleased = atButtonReleased;
+		this.buttonReleased = buttonReleased;
 	}
 	
 	public void add(AtButtonPressed atButtonPressed)
@@ -44,6 +43,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	public void onClick(int buttonState)
 	{
 		if(buttonState == BUTTON_PRESSED) buttonPressed.call();
+		buttonReleased.call();
 		/*
 		switch(buttonState)
 		{
