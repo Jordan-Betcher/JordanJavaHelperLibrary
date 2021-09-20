@@ -5,12 +5,13 @@ import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdPa
 
 public class ExampleAtCaller implements ExampleThirdParty
 {
-	private AtCaller atButtonPressed;
-	private AtCaller atButtonReleased;
+	private AtCaller buttonPressed;
+	private AtCaller buttonReleased;
 	
-	public ExampleAtCaller(AtCaller atButtonPressed, AtCaller atButtonReleased)
+	public ExampleAtCaller(AtCaller buttonPressed, AtCaller buttonReleased)
 	{
-		this.atButtonPressed = atButtonPressed;
+		this.buttonPressed = buttonPressed;
+		buttonReleased.call();
 		//this.AtButtonReleased = atButtonReleased;
 	}
 	
@@ -42,7 +43,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	@Override
 	public void onClick(int buttonState)
 	{
-		if(buttonState == BUTTON_PRESSED) atButtonPressed.call();
+		if(buttonState == BUTTON_PRESSED) buttonPressed.call();
 		/*
 		switch(buttonState)
 		{
