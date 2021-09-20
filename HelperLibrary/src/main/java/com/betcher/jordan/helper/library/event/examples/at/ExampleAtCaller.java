@@ -2,8 +2,6 @@ package main.java.com.betcher.jordan.helper.library.event.examples.at;
 
 import main.java.com.betcher.jordan.helper.library.event.AtCaller;
 import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdParty;
-import main.java.com.betcher.jordan.helper.library.event.examples.event.ExampleButtonPressedListener;
-import main.java.com.betcher.jordan.helper.library.event.examples.event.ExampleButtonReleasedListener;
 
 public class ExampleAtCaller implements ExampleThirdParty
 {
@@ -12,42 +10,45 @@ public class ExampleAtCaller implements ExampleThirdParty
 	
 	public ExampleAtCaller(AtCaller atButtonPressed, AtCaller atButtonReleased)
 	{
-		this.AtButtonPressed = atButtonPressed;
-		this.AtButtonReleased = atButtonReleased;
+		//this.AtButtonPressed = atButtonPressed;
+		//this.AtButtonReleased = atButtonReleased;
+		atButtonPressed.call();
 	}
 	
 	public void add(AtButtonPressed atButtonPressed)
 	{
-		AtButtonPressed.add(atButtonPressed, 1);
+		//AtButtonPressed.add(atButtonPressed, 1);
 	}
 	
 	public void addOneCall(AtButtonPressed atButtonPressed)
 	{
-		AtButtonPressed.add(atButtonPressed, 1);
+		//AtButtonPressed.add(atButtonPressed, 1);
 	}
 	
 	public void add(AtButtonReleased atButtonReleased)
 	{
-		AtButtonReleased.add(atButtonReleased);
+		//AtButtonReleased.add(atButtonReleased);
 	}
 	
 	public void remove(AtButtonPressed atButtonPressed)
 	{
-		AtButtonPressed.remove(atButtonPressed);
+		//AtButtonPressed.remove(atButtonPressed);
 	}
 	
 	public void remove(AtButtonReleased atButtonReleased)
 	{
-		AtButtonPressed.remove(atButtonReleased);
+		//AtButtonPressed.remove(atButtonReleased);
 	}
 	
 	@Override
 	public void onClick(int buttonState)
 	{
+		/*
 		switch(buttonState)
 		{
 			case ExampleThirdParty.BUTTON_PRESSED -> AtButtonPressed.call();
 			case ExampleThirdParty.BUTTON_RELEASED -> AtButtonReleased.call();
 		}
+		//*/
 	}
 }
