@@ -31,7 +31,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	
 	public void remove(AtButtonPressed atButtonPressed)
 	{
-	
+		buttonPressed.remove(atButtonPressed);
 	}
 	
 	public void remove(AtButtonReleased atButtonReleased)

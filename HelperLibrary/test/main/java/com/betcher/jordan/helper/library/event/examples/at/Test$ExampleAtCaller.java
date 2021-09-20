@@ -10,6 +10,19 @@ import static org.mockito.Mockito.*;
 class Test$ExampleAtCaller
 {
 	@Test
+	public void remove_atButtonPressed_removeAtButtonPressedToButtonPressed()
+	{
+		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
+		AtCaller atPressedCaller = mock(AtCaller.class);
+		AtCaller atReleasedCaller = mock(AtCaller.class);
+		
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		exampleAtCaller.remove(atButtonPressed);
+		
+		verify(atPressedCaller, times(1)).remove(atButtonPressed);
+	}
+	
+	@Test
 	public void remove_atButtonReleased_removeAtButtonReleasedFromButtonReleased()
 	{
 		AtButtonReleased atButtonReleased = mock(AtButtonReleased.class);
