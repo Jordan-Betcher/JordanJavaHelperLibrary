@@ -42,7 +42,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	@Override
 	public void onClick(int buttonState)
 	{
-		atButtonPressed.call();
+		if(buttonState != BUTTON_RELEASED) atButtonPressed.call();
 		/*
 		switch(buttonState)
 		{
