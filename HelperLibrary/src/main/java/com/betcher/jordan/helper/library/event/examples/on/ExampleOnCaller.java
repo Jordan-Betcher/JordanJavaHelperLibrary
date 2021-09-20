@@ -24,7 +24,7 @@ public class ExampleOnCaller implements ExampleThirdParty
 	
 	public void addThreeCallsBeforeRemoving(OnButtonChange onButtonChange)
 	{
-	
+		buttonChanged.add(onButtonChange, 3);
 	}
 	
 	public void remove(OnButtonChange onButtonChange)
