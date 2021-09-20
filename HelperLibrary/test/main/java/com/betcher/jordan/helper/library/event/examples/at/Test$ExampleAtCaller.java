@@ -4,7 +4,6 @@ import main.java.com.betcher.jordan.helper.library.event.AtCaller;
 import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdParty;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class Test$ExampleAtCaller
@@ -13,164 +12,164 @@ class Test$ExampleAtCaller
 	public void addOneCall_atButtonPressed_addAtButtonPressed1ToButtonPressed()
 	{
 		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.addOneCall(atButtonPressed);
 		
-		verify(atPressedCaller, times(1)).add(atButtonPressed, 1);
+		verify(buttonPressed, times(1)).add(atButtonPressed, 1);
 	}
 	
 	@Test
 	public void remove_atButtonPressed_removeAtButtonPressedToButtonPressed()
 	{
 		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.remove(atButtonPressed);
 		
-		verify(atPressedCaller, times(1)).remove(atButtonPressed);
+		verify(buttonPressed, times(1)).remove(atButtonPressed);
 	}
 	
 	@Test
 	public void remove_atButtonReleased_removeAtButtonReleasedFromButtonReleased()
 	{
 		AtButtonReleased atButtonReleased = mock(AtButtonReleased.class);
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.remove(atButtonReleased);
 		
-		verify(atReleasedCaller, times(1)).remove(atButtonReleased);
+		verify(buttonReleased, times(1)).remove(atButtonReleased);
 	}
 	
 	@Test
 	public void add_atButtonReleased_addAtButtonReleasedToButtonReleased()
 	{
 		AtButtonReleased atButtonReleased = mock(AtButtonReleased.class);
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.add(atButtonReleased);
 		
-		verify(atReleasedCaller, times(1)).add(atButtonReleased);
+		verify(buttonReleased, times(1)).add(atButtonReleased);
 	}
 	
 	@Test
 	public void add_atButtonPressed_addAtButtonPressedToButtonPressed()
 	{
 		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.add(atButtonPressed);
 		
-		verify(atPressedCaller, times(1)).add(atButtonPressed);
+		verify(buttonPressed, times(1)).add(atButtonPressed);
 	}
 	
 	@Test
 	public void onClick_3_0callButtonReleased()
 	{
 		int buttonState = 3;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atReleasedCaller, times(0)).call();
+		verify(buttonReleased, times(0)).call();
 	}
 	
 	@Test
 	public void onClick_ButtonPressed_0callButtonReleased()
 	{
 		int buttonState = ExampleThirdParty.BUTTON_PRESSED;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atReleasedCaller, times(0)).call();
+		verify(buttonReleased, times(0)).call();
 	}
 	
 	@Test
 	public void onClick_ButtonReleased_0callButtonPressed()
 	{
 		int buttonState = ExampleThirdParty.BUTTON_RELEASED;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atPressedCaller, times(0)).call();
+		verify(buttonPressed, times(0)).call();
 	}
 	
 	@Test
 	public void __0callButtonReleased()
 	{
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		new ExampleAtCaller(buttonPressed, buttonReleased);
 		
-		verify(atReleasedCaller, times(0)).call();
+		verify(buttonReleased, times(0)).call();
 	}
 	
 	@Test
 	public void onClick_ButtonReleased_callButtonReleased()
 	{
 		int buttonState = ExampleThirdParty.BUTTON_RELEASED;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atReleasedCaller, times(1)).call();
+		verify(buttonReleased, times(1)).call();
 	}
 	
 	@Test
 	public void onClick_3_0callButtonPressed()
 	{
 		int buttonState = 3;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atPressedCaller, times(0)).call();
+		verify(buttonPressed, times(0)).call();
 	}
 	
 	@Test
 	public void __0callButtonPressed()
 	{
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		new ExampleAtCaller(buttonPressed, buttonReleased);
 		
-		verify(atPressedCaller, times(0)).call();
+		verify(buttonPressed, times(0)).call();
 	}
 	
 	@Test
 	public void onClick_ButtonPressed_callButtonPressed()
 	{
 		int buttonState = ExampleThirdParty.BUTTON_PRESSED;
-		AtCaller atPressedCaller = mock(AtCaller.class);
-		AtCaller atReleasedCaller = mock(AtCaller.class);
+		AtCaller buttonPressed = mock(AtCaller.class);
+		AtCaller buttonReleased = mock(AtCaller.class);
 		
-		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(atPressedCaller, atReleasedCaller);
+		ExampleAtCaller exampleAtCaller = new ExampleAtCaller(buttonPressed, buttonReleased);
 		exampleAtCaller.onClick(buttonState);
 		
-		verify(atPressedCaller, times(1)).call();
+		verify(buttonPressed, times(1)).call();
 	}
 }
