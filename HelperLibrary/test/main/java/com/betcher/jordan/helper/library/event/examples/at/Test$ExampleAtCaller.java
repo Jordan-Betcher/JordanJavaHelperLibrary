@@ -10,9 +10,9 @@ import static org.mockito.Mockito.*;
 class Test$ExampleAtCaller
 {
 	@Test
-	public void onClick_ButtonReleased_0callAtButtonPressed()
+	public void onClick_3_0callAtButtonPressed()
 	{
-		int buttonState = ExampleThirdParty.BUTTON_RELEASED;
+		int buttonState = 3;
 		AtCaller atPressedCaller = mock(AtCaller.class);
 		AtCaller atReleasedCaller = mock(AtCaller.class);
 		
