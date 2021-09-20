@@ -10,7 +10,7 @@ import static org.mockito.Mockito.times;
 class Test$ExampleEvent
 {
 	@Test
-	public void remove_atButtonPressed_removeAtButtonPressedToButtonPressed()
+	public void remove_buttonPressed_removeButtonPressedListenerToButtonPressed()
 	{
 		ExampleButtonPressedListener buttonPressedListener = mock(ExampleButtonPressedListener.class);
 		Event buttonPressed = mock(Event.class);
@@ -23,7 +23,7 @@ class Test$ExampleEvent
 	}
 	
 	@Test
-	public void remove_atButtonReleased_removeAtButtonReleasedFromButtonReleased()
+	public void remove_ButtonReleased_removeButtonReleasedListenerFromButtonReleased()
 	{
 		ExampleButtonReleasedListener buttonReleasedListener = mock(ExampleButtonReleasedListener.class);
 		Event buttonPressed = mock(Event.class);
@@ -36,7 +36,7 @@ class Test$ExampleEvent
 	}
 	
 	@Test
-	public void add_atButtonReleased_addAtButtonReleasedToButtonReleased()
+	public void add_buttonReleased_addButtonReleasedListenerToButtonReleased()
 	{
 		ExampleButtonReleasedListener buttonReleasedListener = mock(ExampleButtonReleasedListener.class);
 		Event buttonPressed = mock(Event.class);
@@ -49,7 +49,7 @@ class Test$ExampleEvent
 	}
 	
 	@Test
-	public void add_atButtonPressed_addAtButtonPressedToButtonPressed()
+	public void add_buttonPressedListener_addButtonPressedListenerToButtonPressed()
 	{
 		ExampleButtonPressedListener buttonPressedListener = mock(ExampleButtonPressedListener.class);
 		Event buttonPressed = mock(Event.class);
