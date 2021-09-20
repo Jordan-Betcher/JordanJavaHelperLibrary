@@ -1,23 +1,20 @@
 package main.java.com.betcher.jordan.helper.library.event.examples.on;
 
-import main.java.com.betcher.jordan.helper.library.event.Event;
 import main.java.com.betcher.jordan.helper.library.event.OnCaller;
 import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdParty;
-import main.java.com.betcher.jordan.helper.library.event.examples.event.ExampleButtonPressedListener;
-import main.java.com.betcher.jordan.helper.library.event.examples.event.ExampleButtonReleasedListener;
 
 public class ExampleOnCaller implements ExampleThirdParty
 {
-	private OnCaller<Integer> onButtonCaller;
+	private OnCaller<Integer> buttonChanged;
 	
 	public ExampleOnCaller(OnCaller<Integer> onButtonCaller)
 	{
-		this.onButtonCaller = onButtonCaller;
+		this.buttonChanged = onButtonCaller;
 	}
 	
 	public void add(OnButtonChange onButtonChange)
 	{
-	
+		buttonChanged.add(onButtonChange);
 	}
 	
 	public void addOneCallBeforeRemoving(OnButtonChange onButtonChange)
@@ -38,6 +35,6 @@ public class ExampleOnCaller implements ExampleThirdParty
 	@Override
 	public void onClick(int buttonState)
 	{
-		onButtonCaller.call(buttonState);
+		buttonChanged.call(buttonState);
 	}
 }

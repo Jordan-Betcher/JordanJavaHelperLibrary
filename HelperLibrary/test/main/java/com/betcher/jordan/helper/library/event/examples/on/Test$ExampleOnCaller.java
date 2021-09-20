@@ -10,6 +10,18 @@ import static org.mockito.Mockito.*;
 class Test$ExampleOnCaller
 {
 	@Test
+	public void add_onButtonChange_addOnButtonChangeToButtonCaller()
+	{
+		OnButtonChange onButtonChange = mock(OnButtonChange.class);
+		OnCaller<Integer> buttonCaller = mock(OnCaller.class);
+		
+		ExampleOnCaller exampleOnCaller = new ExampleOnCaller(buttonCaller);
+		exampleOnCaller.add(onButtonChange);
+		
+		verify(buttonCaller, times(1)).add(onButtonChange);
+	}
+	
+	@Test
 	public void onClick_0_buttonCallerCall0()
 	{
 		int buttonState = 0;
