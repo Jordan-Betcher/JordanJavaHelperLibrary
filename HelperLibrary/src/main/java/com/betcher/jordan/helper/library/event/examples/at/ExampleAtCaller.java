@@ -26,7 +26,7 @@ public class ExampleAtCaller implements ExampleThirdParty
 	
 	public void add(AtButtonReleased atButtonReleased)
 	{
-	
+		buttonReleased.add(atButtonReleased);
 	}
 	
 	public void remove(AtButtonPressed atButtonPressed)
