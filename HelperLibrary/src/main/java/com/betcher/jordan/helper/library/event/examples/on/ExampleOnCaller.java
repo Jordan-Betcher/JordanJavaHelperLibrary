@@ -17,22 +17,22 @@ public class ExampleOnCaller implements ExampleThirdParty
 	
 	public void add(OnButtonChange onButtonChange)
 	{
-		onButtonCaller.add(onButtonChange);
+	
 	}
 	
 	public void addOneCallBeforeRemoving(OnButtonChange onButtonChange)
 	{
-		onButtonCaller.add(onButtonChange, 1);
+	
 	}
 	
 	public void addThreeCallsBeforeRemoving(OnButtonChange onButtonChange)
 	{
-		onButtonCaller.add(onButtonChange, 3);
+	
 	}
 	
 	public void remove(OnButtonChange onButtonChange)
 	{
-		onButtonCaller.remove(onButtonChange);
+	
 	}
 	
 	@Override
