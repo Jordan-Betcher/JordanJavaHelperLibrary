@@ -1,6 +1,6 @@
 package main.java.com.betcher.jordan.helper.library.event.examples.on;
 
-import main.java.com.betcher.jordan.helper.library.event.OnCaller;
+import main.java.com.betcher.jordan.helper.library.event.onCaller.OnCaller;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;

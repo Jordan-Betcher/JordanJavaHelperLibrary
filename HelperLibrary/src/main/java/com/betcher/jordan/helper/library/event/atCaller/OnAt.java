@@ -1,8 +1,10 @@
-package main.java.com.betcher.jordan.helper.library.event;
+package main.java.com.betcher.jordan.helper.library.event.atCaller;
+
+import main.java.com.betcher.jordan.helper.library.event.onCaller.On;
 
 class OnAt implements On<Void>
 {
-	private At at;
+	private final At at;
 	
 	public OnAt(At at)
 	{

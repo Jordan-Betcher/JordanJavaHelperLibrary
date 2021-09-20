@@ -1,6 +1,6 @@
 package main.java.com.betcher.jordan.helper.library.event.examples.at;
 
-import main.java.com.betcher.jordan.helper.library.event.AtCaller;
+import main.java.com.betcher.jordan.helper.library.event.atCaller.AtCaller;
 import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdParty;
 
 public class ExampleAtCaller implements ExampleThirdParty
