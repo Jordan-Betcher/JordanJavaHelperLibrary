@@ -5,42 +5,39 @@ import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdPa
 
 public class ExampleEvent implements ExampleThirdParty
 {
-	private Event eventButtonPressed;
-	private Event eventButtonReleased;
+	private Event buttonPressed;
+	private Event buttonReleased;
 	
-	public ExampleEvent(Event eventButtonPressed, Event eventButtonReleased)
+	public ExampleEvent(Event buttonPressed, Event buttonReleased)
 	{
-		this.eventButtonPressed = eventButtonPressed;
-		this.eventButtonReleased = eventButtonReleased;
+		this.buttonPressed = buttonPressed;
+		this.buttonReleased = buttonReleased;
 	}
 	
 	public void add(ExampleButtonPressedListener listener)
 	{
-		eventButtonPressed.add(listener);
+		buttonPressed.add(listener);
 	}
 	
 	public void add(ExampleButtonReleasedListener listener)
 	{
-		eventButtonReleased.add(listener);
+		buttonReleased.add(listener);
 	}
 	
 	public void remove(ExampleButtonPressedListener listener)
 	{
-		eventButtonPressed.remove(listener);
+		buttonPressed.remove(listener);
 	}
 	
 	public void remove(ExampleButtonReleasedListener listener)
 	{
-		eventButtonPressed.remove(listener);
+		buttonReleased.remove(listener);
 	}
 	
 	@Override
 	public void onClick(int buttonState)
 	{
-		switch(buttonState)
-		{
-			case ExampleThirdParty.BUTTON_PRESSED -> eventButtonPressed.call();
-			case ExampleThirdParty.BUTTON_RELEASED -> eventButtonReleased.call();
-		}
+		if(buttonState == BUTTON_PRESSED) buttonPressed.call();
+		if(buttonState == BUTTON_RELEASED) buttonReleased.call();
 	}
 }
