@@ -1,4 +1,4 @@
-package main.java.com.betcher.jordan.helper.library.event.examples;
+package main.java.com.betcher.jordan.helper.library.event.examples.event;
 
 import main.java.com.betcher.jordan.helper.library.event.Listener;
 

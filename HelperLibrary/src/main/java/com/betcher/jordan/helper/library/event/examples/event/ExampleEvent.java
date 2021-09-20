@@ -1,8 +1,9 @@
-package main.java.com.betcher.jordan.helper.library.event.examples;
+package main.java.com.betcher.jordan.helper.library.event.examples.event;
 
 import main.java.com.betcher.jordan.helper.library.event.Event;
+import main.java.com.betcher.jordan.helper.library.event.examples.ExampleThirdParty;
 
-public class ExampleEvent implements ExampleThirdPartyEvent
+public class ExampleEvent implements ExampleThirdParty
 {
 	private Event eventButtonPressed;
 	private Event eventButtonReleased;
@@ -38,8 +39,8 @@ public class ExampleEvent implements ExampleThirdPartyEvent
 	{
 		switch(buttonState)
 		{
-			case ExampleThirdPartyEvent.BUTTON_PRESSED -> eventButtonPressed.call();
-			case ExampleThirdPartyEvent.BUTTON_RELEASED -> eventButtonReleased.call();
+			case ExampleThirdParty.BUTTON_PRESSED -> eventButtonPressed.call();
+			case ExampleThirdParty.BUTTON_RELEASED -> eventButtonReleased.call();
 		}
 	}
 }
