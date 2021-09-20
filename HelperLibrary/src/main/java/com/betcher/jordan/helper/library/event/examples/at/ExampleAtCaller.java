@@ -16,27 +16,22 @@ public class ExampleAtCaller implements ExampleThirdParty
 	
 	public void add(AtButtonPressed atButtonPressed)
 	{
-		//AtButtonPressed.add(atButtonPressed, 1);
 	}
 	
 	public void addOneCall(AtButtonPressed atButtonPressed)
 	{
-		//AtButtonPressed.add(atButtonPressed, 1);
 	}
 	
 	public void add(AtButtonReleased atButtonReleased)
 	{
-		//AtButtonReleased.add(atButtonReleased);
 	}
 	
 	public void remove(AtButtonPressed atButtonPressed)
 	{
-		//AtButtonPressed.remove(atButtonPressed);
 	}
 	
 	public void remove(AtButtonReleased atButtonReleased)
 	{
-		//AtButtonPressed.remove(atButtonReleased);
 	}
 	
 	@Override
@@ -44,12 +39,5 @@ public class ExampleAtCaller implements ExampleThirdParty
 	{
 		if(buttonState == BUTTON_PRESSED) buttonPressed.call();
 		buttonReleased.call();
-		/*
-		switch(buttonState)
-		{
-			case ExampleThirdParty.BUTTON_PRESSED -> AtButtonPressed.call();
-			case ExampleThirdParty.BUTTON_RELEASED -> AtButtonReleased.call();
-		}
-		//*/
 	}
 }
