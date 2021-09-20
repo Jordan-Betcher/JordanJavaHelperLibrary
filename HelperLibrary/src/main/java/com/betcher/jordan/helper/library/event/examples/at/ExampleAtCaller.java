@@ -16,22 +16,27 @@ public class ExampleAtCaller implements ExampleThirdParty
 	
 	public void add(AtButtonPressed atButtonPressed)
 	{
+		buttonPressed.add(atButtonPressed);
 	}
 	
 	public void addOneCall(AtButtonPressed atButtonPressed)
 	{
+	
 	}
 	
 	public void add(AtButtonReleased atButtonReleased)
 	{
+	
 	}
 	
 	public void remove(AtButtonPressed atButtonPressed)
 	{
+	
 	}
 	
 	public void remove(AtButtonReleased atButtonReleased)
 	{
+	
 	}
 	
 	@Override
