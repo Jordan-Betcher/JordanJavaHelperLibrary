@@ -11,7 +11,7 @@ class Test$ExampleAtCaller
 	@Test
 	public void addOneCall_atButtonPressed_addAtButtonPressed1ToButtonPressed()
 	{
-		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
+		ExampleAtButtonPressed atButtonPressed = mock(ExampleAtButtonPressed.class);
 		AtCaller buttonPressed = mock(AtCaller.class);
 		AtCaller buttonReleased = mock(AtCaller.class);
 		
@@ -24,7 +24,7 @@ class Test$ExampleAtCaller
 	@Test
 	public void remove_atButtonPressed_removeAtButtonPressedToButtonPressed()
 	{
-		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
+		ExampleAtButtonPressed atButtonPressed = mock(ExampleAtButtonPressed.class);
 		AtCaller buttonPressed = mock(AtCaller.class);
 		AtCaller buttonReleased = mock(AtCaller.class);
 		
@@ -37,7 +37,7 @@ class Test$ExampleAtCaller
 	@Test
 	public void remove_atButtonReleased_removeAtButtonReleasedFromButtonReleased()
 	{
-		AtButtonReleased atButtonReleased = mock(AtButtonReleased.class);
+		ExampleAtButtonReleased atButtonReleased = mock(ExampleAtButtonReleased.class);
 		AtCaller buttonPressed = mock(AtCaller.class);
 		AtCaller buttonReleased = mock(AtCaller.class);
 		
@@ -50,7 +50,7 @@ class Test$ExampleAtCaller
 	@Test
 	public void add_atButtonReleased_addAtButtonReleasedToButtonReleased()
 	{
-		AtButtonReleased atButtonReleased = mock(AtButtonReleased.class);
+		ExampleAtButtonReleased atButtonReleased = mock(ExampleAtButtonReleased.class);
 		AtCaller buttonPressed = mock(AtCaller.class);
 		AtCaller buttonReleased = mock(AtCaller.class);
 		
@@ -63,7 +63,7 @@ class Test$ExampleAtCaller
 	@Test
 	public void add_atButtonPressed_addAtButtonPressedToButtonPressed()
 	{
-		AtButtonPressed atButtonPressed = mock(AtButtonPressed.class);
+		ExampleAtButtonPressed atButtonPressed = mock(ExampleAtButtonPressed.class);
 		AtCaller buttonPressed = mock(AtCaller.class);
 		AtCaller buttonReleased = mock(AtCaller.class);
 		

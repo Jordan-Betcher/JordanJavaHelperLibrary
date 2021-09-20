@@ -14,27 +14,27 @@ public class ExampleAtCaller implements ExampleThirdParty
 		this.buttonReleased = buttonReleased;
 	}
 	
-	public void add(AtButtonPressed atButtonPressed)
+	public void add(ExampleAtButtonPressed atButtonPressed)
 	{
 		buttonPressed.add(atButtonPressed);
 	}
 	
-	public void addOneCall(AtButtonPressed atButtonPressed)
+	public void addOneCall(ExampleAtButtonPressed atButtonPressed)
 	{
 		buttonPressed.add(atButtonPressed, 1);
 	}
 	
-	public void add(AtButtonReleased atButtonReleased)
+	public void add(ExampleAtButtonReleased atButtonReleased)
 	{
 		buttonReleased.add(atButtonReleased);
 	}
 	
-	public void remove(AtButtonPressed atButtonPressed)
+	public void remove(ExampleAtButtonPressed atButtonPressed)
 	{
 		buttonPressed.remove(atButtonPressed);
 	}
 	
-	public void remove(AtButtonReleased atButtonReleased)
+	public void remove(ExampleAtButtonReleased atButtonReleased)
 	{
 		buttonReleased.remove(atButtonReleased);
 	}

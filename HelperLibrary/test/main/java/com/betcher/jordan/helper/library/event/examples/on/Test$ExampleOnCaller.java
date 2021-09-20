@@ -3,7 +3,6 @@ package main.java.com.betcher.jordan.helper.library.event.examples.on;
 import main.java.com.betcher.jordan.helper.library.event.OnCaller;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @SuppressWarnings("unchecked")
@@ -12,7 +11,7 @@ class Test$ExampleOnCaller
 	@Test
 	public void addThreeCallsBeforeRemoving_onButtonChange_addOnButtonChange3ToButtonCaller()
 	{
-		OnButtonChange onButtonChange = mock(OnButtonChange.class);
+		ExampleOnButtonChange onButtonChange = mock(ExampleOnButtonChange.class);
 		OnCaller<Integer> buttonCaller = mock(OnCaller.class);
 		
 		ExampleOnCaller exampleOnCaller = new ExampleOnCaller(buttonCaller);
@@ -24,7 +23,7 @@ class Test$ExampleOnCaller
 	@Test
 	public void addOneCallBeforeRemoving_onButtonChange_addOnButtonChange1ToButtonCaller()
 	{
-		OnButtonChange onButtonChange = mock(OnButtonChange.class);
+		ExampleOnButtonChange onButtonChange = mock(ExampleOnButtonChange.class);
 		OnCaller<Integer> buttonCaller = mock(OnCaller.class);
 		
 		ExampleOnCaller exampleOnCaller = new ExampleOnCaller(buttonCaller);
@@ -36,7 +35,7 @@ class Test$ExampleOnCaller
 	@Test
 	public void remove_onButtonChange_removeOnButtonChangeToButtonCaller()
 	{
-		OnButtonChange onButtonChange = mock(OnButtonChange.class);
+		ExampleOnButtonChange onButtonChange = mock(ExampleOnButtonChange.class);
 		OnCaller<Integer> buttonCaller = mock(OnCaller.class);
 		
 		ExampleOnCaller exampleOnCaller = new ExampleOnCaller(buttonCaller);
@@ -48,7 +47,7 @@ class Test$ExampleOnCaller
 	@Test
 	public void add_onButtonChange_addOnButtonChangeToButtonCaller()
 	{
-		OnButtonChange onButtonChange = mock(OnButtonChange.class);
+		ExampleOnButtonChange onButtonChange = mock(ExampleOnButtonChange.class);
 		OnCaller<Integer> buttonCaller = mock(OnCaller.class);
 		
 		ExampleOnCaller exampleOnCaller = new ExampleOnCaller(buttonCaller);
