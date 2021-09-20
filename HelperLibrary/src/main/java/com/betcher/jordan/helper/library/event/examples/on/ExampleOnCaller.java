@@ -19,7 +19,7 @@ public class ExampleOnCaller implements ExampleThirdParty
 	
 	public void addOneCallBeforeRemoving(OnButtonChange onButtonChange)
 	{
-	
+		buttonChanged.add(onButtonChange, 1);
 	}
 	
 	public void addThreeCallsBeforeRemoving(OnButtonChange onButtonChange)
@@ -29,7 +29,7 @@ public class ExampleOnCaller implements ExampleThirdParty
 	
 	public void remove(OnButtonChange onButtonChange)
 	{
-	
+		buttonChanged.remove(onButtonChange);
 	}
 	
 	@Override
