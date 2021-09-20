@@ -38,6 +38,6 @@ public class ExampleAtCaller implements ExampleThirdParty
 	public void onClick(int buttonState)
 	{
 		if(buttonState == BUTTON_PRESSED) buttonPressed.call();
-		buttonReleased.call();
+		if(buttonState != BUTTON_PRESSED) buttonReleased.call();
 	}
 }
